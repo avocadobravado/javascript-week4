@@ -11,10 +11,6 @@ import { FirebaseListObservable } from 'angularfire2/database';
   providers: [GeoService]
 })
 export class ResultsComponent implements OnInit {
-  // @Input() childCaches;
-  // caches: FirebaseListObservable<any[]>;
-
-  // geoLocation: any[]=null;
   geocaches: any[];
   constructor(private geoService: GeoService) { }
 

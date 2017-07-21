@@ -64,3 +64,47 @@
   </div>
 </div>
 <!--GET ADDRESS BY LAT AND LONG-->
+
+
+<!--GET LONG LAT FROM ADDRESS-->
+<div class="container nudge" style="margin-top: 100px;">
+   <div class="panel">
+     <div class="panel-heading">
+     <h2>Type in your address to get the latitude and longitude</h2>
+   </div>
+   <div class="panel-body">
+     <div>
+        <label for="streetNumber">Street Number:</label>
+        <input #inputStreetNumber>
+      </div>
+
+      <div>
+       <label for="street">Street:</label>
+       <input #inputStreet>
+     </div>
+
+     <div>
+      <label for="city">City:</label>
+      <input #inputCity>
+    </div>
+
+    <div>
+     <label for="state">State:</label>
+     <input #inputState>
+   </div>
+
+      <button (click)="getAddressFromForm(
+      inputStreetNumber.value,
+      inputStreet.value,
+      inputCity.value,
+      inputState.value
+      );
+      inputStreetNumber.value='';
+      inputStreet.value='';
+      inputCity.value='';
+      inputState.value='';
+      ">Submit</button>
+      <h2>{{fromAddressLat}} {{fromAddressLong}}</h2>
+    </div>
+  </div>
+</div>

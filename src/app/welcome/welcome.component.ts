@@ -15,14 +15,13 @@ export class WelcomeComponent {
   caches: FirebaseListObservable<any[]>;
 
   geoLocation: any[]=null;
-  lat: number = null;
-  long: number = null;
-  name: string = null;
+  fromAddressLat: any[] = null;
+  fromAddressLong: any[] = null;
+  // lat: number = null;
+  // long: number = null;
+  // name: string = null;
 
   constructor(private geoService: GeoService) { }
-//
-
-
 
   getLatLongFromForm(lat: number, long: number) {
     this.geoService.getLatLong(lat, long).subscribe
@@ -30,6 +29,13 @@ export class WelcomeComponent {
       this.geoLocation = response.json().results[0].formatted_address;
     })
   }
+
+  getAddressFromForm(streetNumber:string, street: string, city: string, state: string) {
+  this.geoService.getAddress(streetNumber, street, city, state).subscribe(response => {
+    this.fromAddressLat = response.json().results[0].geometry.location.lat;
+    this.fromAddressLong = response.json().results[0].geometry.location.lng;
+  })
+}
 
   submitForm(lat: number, long: number, name: string) {
    var newGeocache: Geocache = new Geocache(lat, long, name);

@@ -1,9 +1,10 @@
-
-<h3>List of geocaches</h3>
-<div *ngFor="let geocache of geocaches">
-   <ul>
-     <li>Name: {{geocache.name}}</li>
-     <li>Latitude: {{geocache.lat}}</li>
-     <li>Longitude: {{geocache.long}}</li>
-   </ul>
- </div>
+<div class="container nudge" style="margin-top: 100px">
+  <h3>List of geocaches</h3>
+  <div *ngFor="let geocache of geocaches">
+    <ul>
+      <li>Name: {{geocache.name}}</li>
+      <li>Latitude: {{geocache.lat}}</li>
+      <li>Longitude: {{geocache.long}}</li>
+    </ul>
+  </div>
+</div>
