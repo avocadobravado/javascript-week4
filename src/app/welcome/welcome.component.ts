@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { GeoService } from "../geo.service";
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css']
+  styleUrls: ['./welcome.component.css'],
+  providers: [GeoService]
 })
-export class WelcomeComponent implements OnInit {
+export class WelcomeComponent {
+  locations: any[];
 
-  constructor() { }
+  constructor(private geocoding: GeoService) { }
 
-  ngOnInit() {
+  getLatLongFromForm(lat: number, long: number) {
+    this.geocoding.getLatLong(lat, long).subscribe
+      (response => {
+      this.locations = response.json().results[0];
+      console.log(this.locations);
+    })
   }
-
 }

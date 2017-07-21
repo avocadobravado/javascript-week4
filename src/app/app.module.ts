@@ -1,3 +1,9 @@
+import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+import { routing } from './app.routing';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -5,16 +11,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { PipeNamePipe } from './pipe-name.pipe';
-import { routing } from './app.routing';
-import { AboutComponent } from './about/about.component';
-import { ListComponent } from './list/list.component';
-import { MemberDetailComponent } from './member-detail/member-detail.component';
-import { masterFirebaseConfig } from './api-keys';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AdminComponent } from './admin/admin.component';
-import { EditMemberComponent } from './edit-member/edit-member.component';
+import { ResultsComponent } from './results/results.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -27,12 +24,7 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     WelcomeComponent,
-    PipeNamePipe,
-    AboutComponent,
-    ListComponent,
-    MemberDetailComponent,
-    AdminComponent,
-    EditMemberComponent
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
@@ -45,4 +37,5 @@ export const firebaseConfig = {
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

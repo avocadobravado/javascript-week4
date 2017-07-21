@@ -9,54 +9,37 @@
     <div class="panel-body">
       <div>
         <div>
-          <label>Image URL of new member:</label>
-          <input #newImage>
+          <label>New latitude:</label>
+          <input #newLat>
         </div>
 
         <div>
-          <label>Name:</label>
+          <label>New longitude:</label>
           <input #newName>
         </div>
 
         <div>
-          <label>Email address:</label>
-          <input #newEmail>
+          <label>Your name:</label>
+          <input #newName>
         </div>
 
         <div>
-          <label>Twitter address:</label>
-          <input #newTwitter>
+          <label>Desceription of cache:</label>
+          <input #newDescription>
         </div>
 
         <div>
           <label>Favorite cyberpunk book:</label>
           <input #newBook>
         </div>
-
-        <div>
-          <label>Favorite cyberpunk movie:</label>
-          <input #newMovie>
-        </div>
-
-        <div>
-          <label>Bio:</label>
-          <textarea #newDescription></textarea>
-        </div>
         <button (click)="submitForm(
-        newImage.value,
-        newName.value,
-        newEmail.value,
-        newTwitter.value,
-        newBook.value,
-        newMovie.value,
-        newDescription.value);
-        newImage.value='';
+        newLat.value,
+        newLong.value,
+        newName.value);
+        newLat.value='';
+        newLong.value='';
         newName.value='';
-        newEmail.value='';
-        newTwitter.value='';
-        newBook.value='';
-        newMovie.value='';
-        newDescription.value=''">Add</button>
+        newDescription.value='';">Add</button>
       </div>
     </div>
   </div>

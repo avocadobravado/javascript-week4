@@ -1,2 +1,24 @@
-<div class="background"> 
+<div class="container nudge" style="margin-top: 100px;">
+   <div class="panel">
+     <div class="panel-heading">
+     <h2>Add a new geocache to the database</h2>
+   </div>
+   <div class="panel-body">
+     <div>
+          <label>Lat:</label>
+          <input #newLat>
+        </div>
+        <div>
+         <label>New longitude:</label>
+         <input #newLong>
+       </div>
+
+  <button (click)="getLatLongFromForm(
+  newLat.value,
+  newLong.value);
+  newLat.value='';
+  newLong.value='';
+  ">Submit</button>
+</div>
+</div>
 </div>

@@ -1,10 +1,8 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { WelcomeComponent } from './welcome/welcome.component';
-import { AboutComponent }   from './about/about.component';
-import { ListComponent }   from './list/list.component';
-import { MemberDetailComponent }   from './member-detail/member-detail.component';
-import { AdminComponent } from './admin/admin.component';
+import { ResultsComponent } from './results/results.component';
 
 const appRoutes: Routes = [
   {
@@ -12,20 +10,8 @@ const appRoutes: Routes = [
     component: WelcomeComponent
   },
   {
-    path: 'about',
-    component: AboutComponent
-  },
-  {
-    path: 'list',
-    component: ListComponent
-  },
-  {
-    path: 'members/:id',
-    component: MemberDetailComponent
-  },
-  {
-    path: 'admin',
-    component: AdminComponent
+    path: 'results',
+    component: ResultsComponent
   }
 ];
 

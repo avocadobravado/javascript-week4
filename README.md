@@ -1,20 +1,16 @@
-# Angular CRUD - Club Manager
+# Geocaching app
 
-#### Week 3 Independent Project - JavaScript
+#### Week 4 Independent Project - JavaScript
 
-#### By **Rose Sponseller, July 14, 2017**
+#### By **Rose Sponseller, July 21, 2017**
 
 ## Description
 
-The High Tech Low Life Club is a web application built with Angular for a group of cyberpunk enthusiasts. As a user, you can view information about the club, see a list of the members, can click on the members to read their full details. As an administrator, you can edit member information, delete members, and add new members.
+blah
 
 ## Screenshots of Web Application
 
-![screenshot of project](https://github.com/avocadobravado/javascript-week3/raw/master/src/assets/scs01.png?raw=true)
-
-![screenshot of project](https://github.com/avocadobravado/javascript-week3/raw/master/src/assets/scs02.png?raw=true)
-
-![screenshot of project](https://github.com/avocadobravado/javascript-week3/raw/master/src/assets/scs03.png?raw=true)
+![screenshot of project](https://github.com/avocadobravado/javascript-week4/raw/master/src/assets/scs01.png?raw=true)
 
 ### Installation
 
@@ -31,13 +27,13 @@ The High Tech Low Life Club is a web application built with Angular for a group 
 Open your terminal and clone this repository with the following command:
 
 ```
-$ git clone https://github.com/avocadobravado/javascript-week3
+$ git clone https://github.com/avocadobravado/javascript-week4
 ```
 
 Move into the cloned repository:
 
 ```
-$ cd javascript-week3
+$ cd javascript-week4
 ```
 
 Create an api-keys.ts file:
@@ -114,7 +110,7 @@ localhost:4200
 
 ## Acknowledgements
 
-* [VirtuaVerse](https://twitter.com/virtuaverse?lang=en) - for the the GIFs
+* blah
 
 ## License
 

@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { Member } from '../member.model';
-import { MemberService } from '../member.service';
+import { Geocache } from '../geocache.model';
+import { GeoService } from '../geo.service';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
-  providers: [MemberService]
+  providers: [GeoService]
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private memberService: MemberService) { }
+  constructor(private geoService: GeoService) { }
 
   ngOnInit() {
   }
 
-  submitForm(image: string, name: string, email: string, twitter: string, book: string, movie: string, description: string) {
-    var newMember: Member = new Member(image, name, email, twitter, book, movie, description);
-    this.memberService.addMember(newMember);
+  submitForm(lat: number, long: number, name: string, description: string) {
+    var newGeocache: Geocache = new Geocache(lat, long, name, description);
+    this.geoService.addGeocache(newGeocache);
   }
 }
