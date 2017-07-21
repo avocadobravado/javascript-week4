@@ -10,7 +10,7 @@ blah
 
 ## Screenshots of Web Application
 
-![screenshot of project](https://github.com/avocadobravado/javascript-week4/raw/master/src/assets/scs01.png?raw=true)
+![screenshot of project](https://github.com/avocadobravado/javascript-week4/raw/master/src/assets/scs011.png?raw=true)
 
 ### Installation
 
