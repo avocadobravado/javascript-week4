@@ -17,11 +17,11 @@ export class GeoService {
   getLatLong(lat: number,lng: number) {
     return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lng+"&key="+geoKey);
   }
-
-  addGeocache(newGeocache: Geocache) {
-    this.geocaches.push(newGeocache);
-    console.log(Geocache);
-  }
+  //
+  // addGeocache(newGeocache: Geocache) {
+  //   this.geocaches.push(newGeocache);
+  //   console.log(Geocache);
+  // }
 
   // getAddress(streetNumber:string, route: string, locality: string, admnArea: string) {
   //   return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?address="+streetNumber+"+"+route+","+locality+","+admnArea+"&key="+geoKey)

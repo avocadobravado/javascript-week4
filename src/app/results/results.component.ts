@@ -11,7 +11,7 @@ import { Geocache } from '../geocache.model';
 })
 export class ResultsComponent implements OnInit {
   @Input() childCaches;
-  constructor() { }
+  constructor(private geoService: GeoService) { }
 
   ngOnInit() {
   }

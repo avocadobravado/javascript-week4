@@ -10,6 +10,8 @@ import { Observable } from 'rxjs/Observable';
 })
 export class WelcomeComponent {
   locations: any[];
+  lat: number = null;
+  long: number = null;
 
   constructor(private geocoding: GeoService) { }
 
