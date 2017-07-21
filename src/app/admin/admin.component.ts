@@ -15,8 +15,8 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
-  submitForm(lat: number, long: number) {
-    var newGeocache: Geocache = new Geocache(lat, long);
+  submitForm(lat: number, long: number, name: string) {
+    var newGeocache: Geocache = new Geocache(lat, long, name);
     this.geoService.addGeocache(newGeocache);
     console.log(newGeocache);
   }

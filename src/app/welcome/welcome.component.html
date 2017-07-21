@@ -1,5 +1,5 @@
 <!-- <div class="container nudge">
-  <div *ngFor="let geoLocations of geoLocation">
+  <div *ngFor="let cache of caches | async">
     <div class="panel-body">
       <p>hi</p>
       {{geoLocation}}
@@ -7,6 +7,7 @@
   </div>
 </div> -->
 
+<!--ADD TO FIREBASE-->
 <div class="container nudge" style="margin-top: 100px;">
    <div class="panel">
      <div class="panel-heading">
@@ -39,7 +40,19 @@
     </div>
   </div>
 </div>
+<!--ADD TO FIREBASE-->
 
+<h3>List of geocaches</h3>
+<div *ngFor="let geoLocations of geoLocation">
+   <ul>
+     <li>Name: {{name}}</li>
+     <li>Latitude: {{lat}}</li>
+     <li>Longitude: {{long}}</li>
+   </ul>
+ </div>
+
+
+<!--GET ADDRESS BY LAT AND LONG-->
 <div class="container nudge" style="margin-top: 100px;">
    <div class="panel">
      <div class="panel-heading">
@@ -66,7 +79,4 @@
     </div>
   </div>
 </div>
-
-<!-- <app-results [childCaches] ="geoLocation"></app-results> -->
-
-<!-- <app-results></app-results> -->
+<!--GET ADDRESS BY LAT AND LONG-->
