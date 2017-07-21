@@ -36,7 +36,6 @@
       newLong.value='';
       newName.value='';
       ">Submit</button>
-      <!-- <h2> {{geoLocation}}</h2> -->
     </div>
   </div>
 </div>
@@ -49,21 +48,21 @@
    <div class="panel-body">
      <div>
         <label for="lat">Latitude:</label>
-        <input #newLat>
+        <input #displayLat>
       </div>
 
       <div>
        <label for="long">Longitude:</label>
-       <input #newLong>
+       <input #displayLong>
      </div>
 
       <button (click)="getLatLongFromForm(
-      newLat.value,
-      newLong.value);
-      newLat.value='';
-      newLong.value='';
+      displayLat.value,
+      displayLong.value);
+      displayLay.value='';
+      displayLong.value='';
       ">Submit</button>
-      <h2> {{geoLocation}}</h2>
+      <h2>{{geoLocation}}</h2>
     </div>
   </div>
 </div>

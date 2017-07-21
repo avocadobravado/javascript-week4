@@ -121,8 +121,9 @@ h4 {
 }
 
 label, input {
+  margin: 0 auto;
   display: block;
-  width: 100%;
+  width: 75%;
   outline: none;
   color: #333;
 }

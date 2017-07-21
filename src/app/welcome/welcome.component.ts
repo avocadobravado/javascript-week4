@@ -17,7 +17,7 @@ export class WelcomeComponent {
 
   constructor(private geoService: GeoService) { }
 
-  getLatLongFromForm(lat: number, long: number, name: string) {
+  getLatLongFromForm(lat: number, long: number) {
     this.geoService.getLatLong(lat, long).subscribe
       (response => {
       this.geoLocation = response.json().results[0].formatted_address;
