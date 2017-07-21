@@ -1,19 +1,63 @@
+<!-- <div class="container nudge">
+  <div *ngFor="let geoLocations of geoLocation">
+    <div class="panel-body">
+      <p>hi</p>
+      {{geoLocation}}
+    </div>
+  </div>
+</div> -->
+
 <div class="container nudge" style="margin-top: 100px;">
    <div class="panel">
      <div class="panel-heading">
-     <h2>Get address by latitude and longitude</h2>
+     <h2>Add a new geocache to the database</h2>
    </div>
    <div class="panel-body">
      <div>
-          <label for="lat">Lat:</label>
-          <input #newLat>
-        </div>
-        <div>
-         <label for="long">New longitude:</label>
-         <input #newLong>
-       </div>
+        <label for="lat">Latitude:</label>
+        <input #newLat>
+      </div>
+
+      <div>
+       <label for="long">Longitude:</label>
+       <input #newLong>
+     </div>
+
+      <div>
+       <label for="name">Your name:</label>
+       <input #newName>
+     </div>
 
       <button (click)="submitForm(
+      newLat.value,
+      newLong.value,
+      newName.value);
+      newLat.value='';
+      newLong.value='';
+      newName.value='';
+      ">Submit</button>
+      <!-- <h2> {{geoLocation}}</h2> -->
+    </div>
+  </div>
+</div>
+
+<div class="container nudge" style="margin-top: 100px;">
+   <div class="panel">
+     <div class="panel-heading">
+     <h2>Get an address by latitude and longitude</h2>
+   </div>
+   <div class="panel-body">
+     <div>
+        <label for="lat">Latitude:</label>
+        <input #newLat>
+      </div>
+
+      <div>
+       <label for="long">Longitude:</label>
+       <input #newLong>
+     </div>
+
+      <button (click)="getLatLongFromForm(
       newLat.value,
       newLong.value);
       newLat.value='';

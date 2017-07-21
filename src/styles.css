@@ -2,7 +2,7 @@
 */
 
 body {
-  background-color: #1f162e;
+  background-color: #006400;
   font-size: 20px;
   color: #333;
   font-family: 'Exo 2', sans-serif;
@@ -25,7 +25,7 @@ li a {
 
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
-  color: #00edfa;
+  color: #333;
   font-family: 'Fjalla One', sans-serif;
   transition: 0.3s all ease-in-out;
   line-height: 1.2em;
@@ -124,7 +124,7 @@ label, input {
   display: block;
   width: 100%;
   outline: none;
-  color: #00edfa;
+  color: #333;
 }
 
 

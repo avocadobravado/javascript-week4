@@ -14,6 +14,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { ResultsComponent } from './results/results.component';
 
 import { GeoService } from './geo.service';
+import { SearchCoordinatesComponent } from './search-coordinates/search-coordinates.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -26,7 +27,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     WelcomeComponent,
-    ResultsComponent
+    ResultsComponent,
+    SearchCoordinatesComponent
   ],
   imports: [
     BrowserModule,
