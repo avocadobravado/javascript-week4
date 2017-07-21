@@ -1,11 +1,9 @@
-<h1>Location search results:</h1>
 
-<!-- {{childPhotos.photos[0].camera.name}} -->
-<!-- results[0].formatted_address -->
-<!-- <h3>{{childCaches.lat}}</h3> --> -->
-
-<!-- childPhotos.photos[0].camera.name -->
-
-<!-- <div *ngFor="let cache of getLatLongFromForm | async">
-  <li>{{geocache.lat}}</li>
-</div> -->
+<h3>List of geocaches</h3>
+<div *ngFor="let geocache of geocaches">
+   <ul>
+     <li>Name: {{geocache.name}}</li>
+     <li>Latitude: {{geocache.lat}}</li>
+     <li>Longitude: {{geocache.long}}</li>
+   </ul>
+ </div>

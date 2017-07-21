@@ -20,12 +20,8 @@ export class WelcomeComponent {
   name: string = null;
 
   constructor(private geoService: GeoService) { }
-// 
-//   ngOnInit() {
-//   this.geoService.getGeocache().subscribe(data => {
-//     this.geoLocation = data;
-//   });
-// }
+//
+
 
 
   getLatLongFromForm(lat: number, long: number) {
