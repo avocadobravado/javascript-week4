@@ -12,16 +12,21 @@ export class GeoService {
 
   constructor(private http: Http, private af: AngularFireDatabase) {
     this.geocaches = af.list('geocaches');
+    console.log(this.geocaches);
   }
 
-  getLatLong(lat: number,lng: number) {
-    return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lng+"&key="+geoKey);
+  getLatLong(lat: number,long: number) {
+    return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+long+"&key="+geoKey);
   }
-  //
-  // addGeocache(newGeocache: Geocache) {
-  //   this.geocaches.push(newGeocache);
-  //   console.log(Geocache);
-  // }
+
+  getGeocache(){
+    return this.geocaches;
+  }
+
+  addGeocache(newGeocache: Geocache) {
+    this.geocaches.push(newGeocache);
+    console.log(Geocache);
+  }
 
   // getAddress(streetNumber:string, route: string, locality: string, admnArea: string) {
   //   return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?address="+streetNumber+"+"+route+","+locality+","+admnArea+"&key="+geoKey)

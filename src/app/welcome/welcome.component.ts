@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { GeoService } from "../geo.service";
 import { Observable } from 'rxjs/Observable';
+import { Geocache } from '../geocache.model';
 
 @Component({
   selector: 'app-welcome',
@@ -9,17 +10,23 @@ import { Observable } from 'rxjs/Observable';
   providers: [GeoService]
 })
 export class WelcomeComponent {
-  locations: any[];
+  geoLocation: any[]=null;
   lat: number = null;
   long: number = null;
 
-  constructor(private geocoding: GeoService) { }
+  constructor(private geoService: GeoService) { }
 
   getLatLongFromForm(lat: number, long: number) {
-    this.geocoding.getLatLong(lat, long).subscribe
+    this.geoService.getLatLong(lat, long).subscribe
       (response => {
-      this.locations = response.json().results[0].formatted_address;
-      console.log(this.locations);
+      this.geoLocation = response.json().results[0].formatted_address;
+      // console.log(this.geoLocation);
     })
   }
+
+  submitForm(lat: number, long: number) {
+   var newGeocache: Geocache = new Geocache(lat, long);
+   this.geoService.addGeocache(newGeocache);
+}
+
 }
