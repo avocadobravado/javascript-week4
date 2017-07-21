@@ -16,8 +16,8 @@ export class WelcomeComponent {
   getLatLongFromForm(lat: number, long: number) {
     this.geocoding.getLatLong(lat, long).subscribe
       (response => {
-      this.locations = response.json().results[0];
-      // console.log(this.locations);
+      this.locations = response.json().results[0].formatted_address;
+      console.log(this.locations);
     })
   }
 }

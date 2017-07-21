@@ -11,7 +11,7 @@ export class GeoService {
   geocaches: FirebaseListObservable<any[]>;
 
   constructor(private http: Http, private af: AngularFireDatabase) {
-    // console.log(this.getLatLong);
+    this.geocaches = af.list('geocaches');
   }
 
   getLatLong(lat: number,lng: number) {
