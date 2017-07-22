@@ -6,7 +6,7 @@
 
 ## Description
 
-blah
+This is a web application built with Angular 2, Firebase, Google's Geocode API, and Typescript. The app allows users to search for geocaches in the existing database, as well as add new geocaches if they like. Users are able to view the details of an individual cache (latitude, longitude, physical address, and submitter/creator of the cache) by clicking on the "See Details" button of each cache.
 
 ### Installation
 
@@ -45,6 +45,9 @@ $ touch src/app/api-keys.ts
 * Finally, add the information from the pop up modal from Firebase to your api-keys.ts file (it should look something like this, but replace the information inside the masterFirebaseConfig with your own unique information):
 
 ```
+
+export var geoKey = "YOUR_KEY_HERE";
+
 export var masterFirebaseConfig = {
   apiKey: "xxxxx",
   authDomain: "xxxxx",
@@ -96,6 +99,7 @@ localhost:4200
 * npm
 * Angular CLI
 * Firebase
+* Google's Geocode API
 
 ### Design
 * Google Fonts
