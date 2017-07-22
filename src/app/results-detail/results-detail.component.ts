@@ -15,9 +15,7 @@ import { ResultsComponent } from '../results/results.component';
 export class ResultsDetailComponent implements OnInit {
   detailId: string;
   geocaches: any[];
-  // geocaches: any[];
   detailToDisplay: any;
-  // detailToDisplay: FirebaseObjectObservable<any>;
 
   constructor(
     private route: ActivatedRoute,

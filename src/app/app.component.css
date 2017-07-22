@@ -1,7 +1,7 @@
 nav, .navbar, .navbar-default {
   border-radius: 0;
-  background-color: #09814A;
   border: none;
+  background-color: #09814A;
   margin-bottom: -30px;
   height: 80px;
   padding-top: 15px;
@@ -13,31 +13,38 @@ nav, .navbar, .navbar-default {
 }
 
 .navbar-brand {
-  text-shadow: 4px 5px 5px #000;
+  text-shadow: 2px 3px 4px #3f2513;
 }
 
 nav a {
   margin-top: 5px;
   font-size: 40px;
-  color: #c0c0c0;
+  color: #eee;
   transition: 0.3s all ease-in-out;
 }
 
 nav a:hover {
-  color: #523a68;
+  color: #ccc;
 }
 
 nav a:focus, nav a:active {
-  color: #00edfa;
+  color: #fafafa;
+}
+
+.navbar-right {
+  margin-right: 10px;
 }
 
 .navbar-right a {
   color: white;
   font-size: 20px;
+  line-height: 3em;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .navbar-right a:hover {
-  background-color: #c0c0c0;
+  background-color: #3f2513;
   transform: translateY(-.1em);
 }
 

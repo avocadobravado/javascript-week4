@@ -23,7 +23,6 @@ export class ResultsComponent implements OnInit {
   ngOnInit() {
     this.geoService.getGeocache().subscribe(data => {
     this.geocaches = data;
-    // console.log(this.geocaches);
     });
   }
 

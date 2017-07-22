@@ -20,6 +20,8 @@ export class WelcomeComponent {
 
   constructor(private router: Router, private geoService: GeoService) { }
 
+  // When a user inputs the lat and long, they will receive the address
+
   getLatLongFromForm(lat: number, long: number) {
     this.geoService.getLatLong(lat, long).subscribe
       (response => {
@@ -27,12 +29,16 @@ export class WelcomeComponent {
     })
   }
 
+  // When a user inputs an address, the lat and long will display on page
+
   getAddressFromForm(streetNumber:string, street: string, city: string, state: string) {
   this.geoService.getAddress(streetNumber, street, city, state).subscribe(response => {
     this.fromAddressLat = response.json().results[0].geometry.location.lat;
     this.fromAddressLong = response.json().results[0].geometry.location.lng;
   })
 }
+
+// When a user submits the lat and long of a geocache, it will save to Firebase
 
   submitFormWithLatLong(lat: number, long: number, name: string) {
    this.geoService.getLatLong(lat, long).subscribe(response => {
@@ -44,6 +50,8 @@ export class WelcomeComponent {
     this.geoService.addGeocache(newGeocache);
    });
  }
+
+// When a user submits the address of a geocache, it will save to Firebase
 
  submitFormWithAddress(streetNumber: string, streetName: string, city: string, state: string, name: string) {
    this.geoService.getAddress(streetNumber, streetName, city, state).subscribe(response => {

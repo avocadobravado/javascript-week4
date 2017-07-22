@@ -8,10 +8,6 @@
 
 blah
 
-## Screenshots of Web Application
-
-![screenshot of project](https://github.com/avocadobravado/javascript-week4/raw/master/src/assets/scs011.png?raw=true)
-
 ### Installation
 
 #### Prerequisites
@@ -107,10 +103,6 @@ localhost:4200
 ## Support and contact details
 
 * Feel free to reach out with suggestions at rosesponseller@gmail.com
-
-## Acknowledgements
-
-* blah
 
 ## License
 
