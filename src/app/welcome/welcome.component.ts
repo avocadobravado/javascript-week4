@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GeoService } from "../geo.service";
 import { Observable } from 'rxjs/Observable';
 import { Geocache } from '../geocache.model';
+import { Router } from '@angular/router';
 import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
@@ -21,7 +22,7 @@ export class WelcomeComponent {
   // long: number = null;
   // name: string = null;
 
-  constructor(private geoService: GeoService) { }
+  constructor(private router: Router, private geoService: GeoService) { }
 
   getLatLongFromForm(lat: number, long: number) {
     this.geoService.getLatLong(lat, long).subscribe
@@ -41,4 +42,9 @@ export class WelcomeComponent {
    var newGeocache: Geocache = new Geocache(lat, long, name);
    this.geoService.addGeocache(newGeocache);
  }
+
+ // ngOnInit(){
+ //   this.members = this.albumService.getMembers();
+ // }
+
 }

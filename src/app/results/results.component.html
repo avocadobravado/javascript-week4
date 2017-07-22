@@ -2,7 +2,7 @@
   <h3>List of geocaches</h3>
   <div *ngFor="let geocache of geocaches">
     <ul>
-      <li>Name: {{geocache.name}}</li>
+      <li>Name: {{geocache.name}} <button (click)="goToDetailPage(geocache)">See Details</button></li>
       <li>Latitude: {{geocache.lat}}</li>
       <li>Longitude: {{geocache.long}}</li>
     </ul>
