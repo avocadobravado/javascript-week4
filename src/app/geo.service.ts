@@ -3,13 +3,15 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { geoKey } from './api-keys';
 import { Geocache } from './geocache.model';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
+
 
 
 @Injectable()
 export class GeoService {
   geocaches: FirebaseListObservable<any[]>;
-
+  details: FirebaseListObservable<any[]>;
+  
   constructor(private http: Http, private af: AngularFireDatabase) {
     this.geocaches = af.list('geocaches');
     console.log(this.geocaches);
@@ -30,5 +32,9 @@ export class GeoService {
   addGeocache(newGeocache: Geocache) {
     this.geocaches.push(newGeocache);
     console.log(Geocache);
+  }
+
+  getDetailById(detailId: string): FirebaseObjectObservable<any> {
+    return this.af.object('details/' + detailId);
   }
 }

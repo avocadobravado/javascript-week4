@@ -1,0 +1,110 @@
+<app-results></app-results>
+
+<!--ADD TO FIREBASE-->
+<div class="container nudge" style="margin-top: 100px;">
+   <div class="panel">
+     <div class="panel-heading">
+     <h2>Add a new geocache to the database</h2>
+   </div>
+   <div class="panel-body">
+     <div>
+        <label for="lat">Latitude:</label>
+        <input #newLat>
+      </div>
+
+      <div>
+       <label for="long">Longitude:</label>
+       <input #newLong>
+     </div>
+
+      <div>
+       <label for="name">Your name:</label>
+       <input #newName>
+     </div>
+
+      <button (click)="submitForm(
+      newLat.value,
+      newLong.value,
+      newName.value);
+      newLat.value='';
+      newLong.value='';
+      newName.value='';
+      ">Submit</button>
+    </div>
+  </div>
+</div>
+<!--ADD TO FIREBASE-->
+
+
+<!--GET ADDRESS BY LAT AND LONG-->
+<div class="container nudge" style="margin-top: 100px;">
+   <div class="panel">
+     <div class="panel-heading">
+     <h2>Get an address by latitude and longitude</h2>
+   </div>
+   <div class="panel-body">
+     <div>
+        <label for="lat">Latitude:</label>
+        <input #displayLat>
+      </div>
+
+      <div>
+       <label for="long">Longitude:</label>
+       <input #displayLong>
+     </div>
+
+      <button (click)="getLatLongFromForm(
+      displayLat.value,
+      displayLong.value);
+      displayLay.value='';
+      displayLong.value='';
+      ">Submit</button>
+      <h2>{{geoLocation}}</h2>
+    </div>
+  </div>
+</div>
+<!--GET ADDRESS BY LAT AND LONG-->
+
+
+<!--GET LONG LAT FROM ADDRESS-->
+<div class="container nudge" style="margin-top: 100px;">
+   <div class="panel">
+     <div class="panel-heading">
+     <h2>Type in your address to get the latitude and longitude</h2>
+   </div>
+   <div class="panel-body">
+     <div>
+        <label for="streetNumber">Street Number:</label>
+        <input #inputStreetNumber>
+      </div>
+
+      <div>
+       <label for="street">Street:</label>
+       <input #inputStreet>
+     </div>
+
+     <div>
+      <label for="city">City:</label>
+      <input #inputCity>
+    </div>
+
+    <div>
+     <label for="state">State:</label>
+     <input #inputState>
+   </div>
+
+      <button (click)="getAddressFromForm(
+      inputStreetNumber.value,
+      inputStreet.value,
+      inputCity.value,
+      inputState.value
+      );
+      inputStreetNumber.value='';
+      inputStreet.value='';
+      inputCity.value='';
+      inputState.value='';
+      ">Submit</button>
+      <h2>{{fromAddressLat}} {{fromAddressLong}}</h2>
+    </div>
+  </div>
+</div>
