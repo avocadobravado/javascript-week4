@@ -1,14 +1,1 @@
-/* Image */
-.background {
-  background: url('../../assets/hero.gif');
-  height: 90vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-}
 
-img {
-  width: 100%;
-  /*max-height: 400px;*/
-}

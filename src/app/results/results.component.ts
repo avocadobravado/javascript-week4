@@ -14,15 +14,19 @@ import { Router } from '@angular/router';
 })
 export class ResultsComponent implements OnInit {
   geocaches: any[];
+
   constructor(private router: Router,
   private location: Location,
   private geoService: GeoService) { }
 
-    ngOnInit() {
+
+  ngOnInit() {
     this.geoService.getGeocache().subscribe(data => {
-      this.geocaches = data;
+    this.geocaches = data;
+    // console.log(this.geocaches);
     });
   }
+
   goToDetailPage(clickedDetail) {
     this.router.navigate(['details', clickedDetail.$key]);
   }

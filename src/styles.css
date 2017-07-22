@@ -2,10 +2,10 @@
 */
 
 body {
-  background-color: #006400;
-  font-size: 20px;
-  color: #333;
-  font-family: 'Exo 2', sans-serif;
+  background-color: #333;
+  font-size: 22px;
+  color: #222;
+  font-family: 'Zilla Slab', sans-serif;
   letter-spacing: .01em;
 }
 
@@ -19,13 +19,17 @@ a:hover {
   color: #d748f0;
 }
 
+li {
+  list-style-type: none;
+}
+
 li a {
   color: #fff;
 }
 
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
-  color: #333;
+  color: #222;
   font-family: 'Fjalla One', sans-serif;
   transition: 0.3s all ease-in-out;
   line-height: 1.2em;
@@ -43,6 +47,12 @@ h4 {
   font-size: 20px;
 }
 
+strong {
+  color: #222;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -57,67 +67,21 @@ h4 {
   color: white;
 }
 
-.animation {
-  text-align: center;
-  margin: 0 auto;
-  width: 90px;
-  background: linear-gradient(45deg, #d748f0, #523a68);
-  padding: 10px 15px;
-  color: #fff;
-  border-radius: 10px;
-  animation: throb 35s infinite alternate ease-in-out;
-}
-
-@keyframes throb {
-  0% {
-    /*transform: scale(1.01);*/
-    background: linear-gradient(45deg, #523a68, #d748f0);
-  }
-  10% {
-    background: linear-gradient(60deg, #523a68, #d748f0);
-  }
-  20% {
-    background: linear-gradient(70deg, #523a68, #d748f0);
-  }
-  30% {
-    background: linear-gradient(90deg, #523a68, #d748f0);
-  }
-  40% {
-    background: linear-gradient(110deg, #523a68, #d748f0);
-  }
-  50% {
-    background: linear-gradient(120deg, #523a68, #d748f0);
-  }
-  60% {
-    background: linear-gradient(130deg, #523a68, #d748f0);
-  }
-  70% {
-    background: linear-gradient(140deg, #523a68, #d748f0);
-  }
-  80% {
-    background: linear-gradient(150deg, #523a68, #d748f0);
-  }
-  90% {
-    background: linear-gradient(160deg, #523a68, #d748f0);
-  }
-  100% {
-    background: linear-gradient(170deg, #523a68, #d748f0);
-  }
-}
 
 .nudge {
   margin-top: 60px;
   margin-bottom: 100px;
-  background-color: inherit;
+  background-color: red;
 }
 
 .container {
   max-width: 1100px;
   color: #fafafa;
+  background-color: #09814A;
 }
 
-.member-img {
-
+.panel {
+  background-color: #09814A;
 }
 
 label, input {
@@ -125,7 +89,7 @@ label, input {
   display: block;
   width: 75%;
   outline: none;
-  color: #333;
+  color: #222;
 }
 
 
@@ -140,16 +104,23 @@ input {
   border-radius: 3px;
   padding: 10px;
   transition: 0.3s all ease-in-out;
+  margin-bottom: 10px;
 }
 
-input:hover, input:focus, input:active {
+input:hover {
   padding: 10px;
   border: 1px solid #111;
-  background-color: #bffbff;
+  background-color: #dcdcdc;
+}
+
+input:focus, input:active {
+  background-color: #eee;
 }
 
 button {
-  background-color: #d748f0;
+  display: block;
+  margin: 10px auto;
+  background-color: #3f2513;
   border: 0;
   box-shadow: 0;
   border-radius: 5px;
@@ -158,5 +129,5 @@ button {
 }
 
 button:hover {
-  background-color: #1f162e;
+  background-color: #333;
 }

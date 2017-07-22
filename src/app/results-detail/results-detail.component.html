@@ -1,6 +1,10 @@
 <div class="container nudge" style="margin-top: 100px">
-  <h1>Information about this geocache</h1>
-  <!-- <p>Creator of cache: {{(detailToDisplay | async)?.name}}</p> -->
-  {{detailToDisplay}}
-    <p>Latitude: {{(detailToDisplay | async)?.lat}}</p> <p>Longitude: {{(detailToDisplay | async)?.long}}</p>
+  <div class="panel">
+    <strong><a routerLink="/results">&larr; Go back to list</a></strong>
+    <h2>Information about this geocache</h2>
+
+    <p><strong>Name of cache creator:</strong> {{(detailToDisplay | async)?.name}}</p>
+    <p><strong>Latitude:</strong> {{(detailToDisplay | async)?.lat}}</p>
+    <p><strong>Longitude:</strong> {{(detailToDisplay | async)?.long}}</p>
+    <p><strong>Address:</strong> {{(detailToDisplay | async)?.address}}</p>
 </div>

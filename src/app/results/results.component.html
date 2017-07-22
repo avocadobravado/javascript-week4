@@ -1,10 +1,12 @@
 <div class="container nudge" style="margin-top: 100px">
-  <h3>List of geocaches</h3>
-  <div *ngFor="let geocache of geocaches">
+  <h3>List of Geocaches</h3>
+  <div *ngFor="let geocache of geocaches ">
     <ul>
-      <li>Name: {{geocache.name}} <button (click)="goToDetailPage(geocache)">See Details</button></li>
-      <li>Latitude: {{geocache.lat}}</li>
+      <li><strong>Cache added by:</strong> {{geocache.name}}
+        <button (click)="goToDetailPage(geocache)">See Details</button></li>
+      <!-- <li>Latitude: {{geocache.lat}}</li>
       <li>Longitude: {{geocache.long}}</li>
+      <li>Street: {{geocache.street}}</li> -->
     </ul>
   </div>
 </div>

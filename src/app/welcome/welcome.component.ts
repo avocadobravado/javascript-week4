@@ -14,13 +14,9 @@ import { FirebaseListObservable } from 'angularfire2/database';
 export class WelcomeComponent {
 
   caches: FirebaseListObservable<any[]>;
-
   geoLocation: any[]=null;
   fromAddressLat: any[] = null;
   fromAddressLong: any[] = null;
-  // lat: number = null;
-  // long: number = null;
-  // name: string = null;
 
   constructor(private router: Router, private geoService: GeoService) { }
 
@@ -38,13 +34,26 @@ export class WelcomeComponent {
   })
 }
 
-  submitForm(lat: number, long: number, name: string) {
-   var newGeocache: Geocache = new Geocache(lat, long, name);
-   this.geoService.addGeocache(newGeocache);
+  submitFormWithLatLong(lat: number, long: number, name: string) {
+   this.geoService.getLatLong(lat, long).subscribe(response => {
+     var address =  response.json().results[0].formatted_address;
+
+   console.log( address );
+
+    var newGeocache: Geocache = new Geocache(lat, long, name, address);
+    this.geoService.addGeocache(newGeocache);
+   });
  }
 
- // ngOnInit(){
- //   this.members = this.albumService.getMembers();
- // }
+ submitFormWithAddress(streetNumber: string, streetName: string, city: string, state: string, name: string) {
+   this.geoService.getAddress(streetNumber, streetName, city, state).subscribe(response => {
+     var lat  = response.json().results[0].geometry.location.lat;
+     var long =  response.json().results[0].geometry.location.lng;
 
+     var address = streetNumber + " " + streetName + " " + city + ", " + state;
+
+   var newGeocache: Geocache = new Geocache(lat, long, name, address);
+   this.geoService.addGeocache(newGeocache);
+   });
+ }
 }

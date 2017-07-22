@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 import { Geocache } from '../geocache.model';
 import { GeoService } from '../geo.service';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
-
+import { ResultsComponent } from '../results/results.component';
 
 @Component({
   selector: 'app-results-detail',
@@ -13,22 +13,27 @@ import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable }
   providers: [GeoService]
 })
 export class ResultsDetailComponent implements OnInit {
-
   detailId: string;
-  // detailTodisplay;
-  detailTodisplay: FirebaseObjectObservable<any>;
+  geocaches: any[];
+  // geocaches: any[];
+  detailToDisplay: any;
+  // detailToDisplay: FirebaseObjectObservable<any>;
 
-    constructor(
-      private route: ActivatedRoute,
-      private location: Location,
-      private geoService: GeoService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private location: Location,
+    private geoService: GeoService) { }
 
-    ngOnInit() {
+  ngOnInit() {
+    this.geoService.getGeocache().subscribe(data => {
+      this.geocaches = data;
+    });
 
     this.route.params.forEach((urlParameters) => {
       this.detailId = urlParameters['id'];
-        });
-       this.detailTodisplay = this.geoService.getDetailById(this.detailId);
-       console.log(this.detailId);
-      }
+    });
+
+    this.detailToDisplay = this.geoService.getDetailById(this.detailId);
+
+  }
 }

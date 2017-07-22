@@ -1,10 +1,10 @@
-<app-results></app-results>
+<!-- <app-results></app-results> -->
 
 <!--ADD TO FIREBASE-->
 <div class="container nudge" style="margin-top: 100px;">
    <div class="panel">
      <div class="panel-heading">
-     <h2>Add a new geocache to the database</h2>
+     <h2>Add a new geocache by latitude and longitude</h2>
    </div>
    <div class="panel-body">
      <div>
@@ -18,11 +18,11 @@
      </div>
 
       <div>
-       <label for="name">Your name:</label>
+       <label for="newName">Your name:</label>
        <input #newName>
      </div>
 
-      <button (click)="submitForm(
+      <button (click)="submitFormWithLatLong(
       newLat.value,
       newLong.value,
       newName.value);
@@ -32,6 +32,52 @@
       ">Submit</button>
     </div>
   </div>
+
+  <div class="panel">
+    <div class="panel-heading">
+    <h2>Add a new geocache by address</h2>
+  </div>
+  <div class="panel-body">
+    <div>
+       <label for="newStreetNumber">Street Number:</label>
+       <input #newStreetNumber>
+     </div>
+
+     <div>
+      <label for="newStreetName">Street name:</label>
+      <input #newStreetName>
+    </div>
+
+     <div>
+      <label for="newCity">City name:</label>
+      <input #newCity>
+    </div>
+
+    <div>
+     <label for="newState">State:</label>
+     <input #newState>
+   </div>
+
+   <div>
+    <label for="newNameAddress">Name:</label>
+    <input #newNameAddress>
+  </div>
+
+     <button (click)="submitFormWithAddress(
+     newStreetNumber.value,
+     newStreetName.value,
+     newCity.value,
+     newState.value,
+     newNameAddress.value
+     );
+     newStreetNumber.value='';
+     newStreetName.value='';
+     newCity.value='';
+     newState.value='';
+     newNameAddress.value='';
+     ">Submit</button>
+   </div>
+ </div>
 </div>
 <!--ADD TO FIREBASE-->
 

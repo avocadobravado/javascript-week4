@@ -5,16 +5,12 @@ import { geoKey } from './api-keys';
 import { Geocache } from './geocache.model';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
-
-
 @Injectable()
 export class GeoService {
   geocaches: FirebaseListObservable<any[]>;
-  // details: FirebaseListObservable<any[]>;
 
   constructor(private http: Http, private af: AngularFireDatabase) {
     this.geocaches = af.list('geocaches');
-    console.log(this.geocaches);
   }
 
   getLatLong(lat: number,long: number) {
@@ -31,11 +27,13 @@ export class GeoService {
 
   addGeocache(newGeocache: Geocache) {
     this.geocaches.push(newGeocache);
-    console.log(Geocache);
+    // console.log(Geocache);
   }
 
+  // getDetailById(detailId: string) {
+  //   return this.af.object('details/' + detailId);
+  // }
   getDetailById(detailId: string) {
-  //  FirebaseObjectObservable<any> {
-    return this.af.object('details/' + detailId);
+    return this.af.object('geocaches/' + detailId);
   }
 }
